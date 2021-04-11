@@ -11,17 +11,33 @@
  *
  */
 class Stack {
-  push(/* element */) {
-    throw new Error('Not implemented');
+  constructor() {
+    // this.element = element;
+    this.stack = [];
+  }
+
+  push(element) {
+    this.stack.push(element);
   }
 
   pop() {
-    throw new Error('Not implemented');
+    const el = this.stack.slice(-1)[0];
+    this.stack = this.stack.slice(0, -1);
+    return el;
   }
 
   peek() {
-    throw new Error('Not implemented');
+    return this.stack.slice(-1)[0];
   }
 }
 
 module.exports = Stack;
+
+// const s = new Stack();
+// s.push(1);
+// s.push(3);
+// console.log(s.peek());
+// s.push(4);
+// console.log(s.peek());
+// console.log(s.pop())
+// console.log(s.peek())
